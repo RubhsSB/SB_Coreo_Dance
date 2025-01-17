@@ -53,6 +53,13 @@ button:disabled {
   background-color: #218838;
 }
 
+/* Secuencia más grande */
+#sequence {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
 #result {
   font-size: 18px;
   font-weight: bold;
