@@ -1,5 +1,10 @@
 // Lista de pasos de baile (pool de palabras)
-const stepsPool = ["CyC", "Daniel y Alma", "CyC", "CyT Sensual", "JyE", "EyG", "DyY", "MARCO ESPEJO", "CYC", "JHERSY - Molino", "JHERSY - Preparar pos Cerrada", "Sergio y Katina", "EyG", "Alberto y María (Cats)", "YyE", "JHERSY (preparo sensual + mano Follow)", "JHERSY (preparo sensual + lanzo en 4 y salgo)", "DIAGONAL salida", "DIAGONAL salida", "AyV", "CyC", "Sergio y Katina", "CyC", "Sensual +", "Gto y M", "José y Layla (Mym)", "INTRO", "K_ELDE", "TONIO (brazos, cuello+Disoc, Salir)", "JLAB (salir/end)", "K_ELDE", "JHERSY (salir pasos cambio mano)", "JHERSY (Mano en 5 bajar)", "JHERSY (Giro F en 5 + Giro L en 7 más desplazamiento)", "JHERSY pasos", "JHERSY (Giro cambio mano)", "K_ELDE", "Iván y Sarai", "TONIO (cambio posición mano hombro)", "JHERSY (salir/end)", "CyC", "Tonio (Codos / Angel / Andar)", "70'", "Yowke", "Pasitos Elw Adelante/Atrás", "Pasitos Elw Izq/Dcha", "Cambio posición con mano Izq (Marc/Sra)", "Daniel y Alma", "Francia", "Alex y Lais (jóvenes -3+1)", "VyA", "DyY", "JyE", "CyC", "70'", "CyC", "M y Gta", "DyY", "DyY", "ENGAÑO", "PyL", "Yowke", "DyY", "ENGAÑO", "MOLINO juego", "TONIO (enrrollo + saco/peinado)", "SENSUAL Lados", "PATADA", "MATI y SOFI", "MOLINO insta", "EyG", "TyC", "CyC", "GOLPE Elw", "JyE", "INTRO", "EyG", "VALENT", "VyA", "FLECHA", "CyC", "CyC", "CyC", "GERO y MIGLE (cambio pos 360º)", "Cuello (en 6)", "CyT", "EyG", "BRAZOS frame", "JOVENES 70'+ Cuello", "5 cintura abajo", "David", "CyT sens", "CyT sens", "DISOCIACION de PECHO (Enrollada)", "EyG", "CyC", "GAB", "CyC", "CyT", "KENZ y JULY Lanzo brazo atrás", "JyE", "Básico + Salto", "CyC", "EyG", "Pablo y Nat (jóvenes)" , "Otto", "CyC", "ASCENSOR", "JLAB", "JAVI y BELÉN", "JORGE y SANDRA", "JyE", "COLOMBIAN", "DISOCIACION de PECHO (en SOMBRA)" , "CyC", "GIRO 70 Cambio Posición CyT", "GIRO ATRÁS ONDA CyC", "CyC", "CyC", "JLAB", "CyC", "YEIFREN", "CyC", "DyY", "SENSUAL +", "DyY", "70´Adelante", "JyE", "A y Yur", "Lado MAMBO", "GAB", "JyE Giro CUELLO", "DISOCIACION de PECHO (pos CERRADA)", "D e Inés", "INTRO", "CyT", "Brazo Lanzo DEBAJO", "JLAB", "DOTORE (Mym)", "ARGETIN", "CANGURO", "PyL Pasos", "ENGAÑO", "CyC", "JyE", "GUITARRA", "SINCOPADO", "Pasos CARLOS"];
+const stepsPool = [
+  "CyC", "Daniel y Alma", "CyC", "CyT Sensual", "JyE", "EyG", "DyY", "MARCO ESPEJO", "CYC", "JHERSY - Molino",
+  "JHERSY - Preparar pos Cerrada", "Sergio y Katina", "EyG", "Alberto y María (Cats)", "YyE", "JHERSY (preparo sensual + mano Follow)",
+  "JHERSY (preparo sensual + lanzo en 4 y salgo)", "DIAGONAL salida", "AyV", "CyC", "Sergio y Katina", "Sensual +", "Gto y M",
+  "José y Layla (Mym)", "INTRO", "K_ELDE", "TONIO (brazos, cuello+Disoc, Salir)", "JLAB (salir/end)", "Iván y Sarai", "TONIO (cambio posición mano hombro)"
+];
 
 // Pasos seleccionados para la partida (solo 10)
 let steps = [];
@@ -30,6 +35,7 @@ function createStepButtons() {
   steps.forEach(step => {
     const button = document.createElement("button");
     button.textContent = step;
+    button.classList.add("step-button"); // Añade clase para estilo
     button.addEventListener("click", () => handleStepClick(step));
     stepButtonsContainer.appendChild(button);
   });
@@ -74,4 +80,23 @@ function addStep() {
   playerTurn = true; // Activa el turno del jugador
 }
 
-// F
+// Función para verificar la secuencia del jugador
+function checkPlayerSequence() {
+  if (JSON.stringify(playerSequence) === JSON.stringify(sequence)) {
+    resultElement.textContent = "¡Correcto! Agregando un nuevo paso...";
+    playerTurn = false;
+    setTimeout(() => addStep(), 1000); // Agrega un nuevo paso después de 1 segundo
+  } else {
+    resultElement.textContent = "¡Incorrecto! Fin del juego.";
+    playerTurn = false;
+    confirmButton.disabled = true; // Desactiva el botón confirmar
+  }
+}
+
+// Event listeners
+startButton.addEventListener("click", startGame);
+confirmButton.addEventListener("click", () => {
+  if (playerTurn) {
+    checkPlayerSequence();
+  }
+});
