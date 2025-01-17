@@ -1,9 +1,9 @@
 // Lista de pasos de baile (pool de palabras)
 const stepsPool = [
-  "CyC", "Daniel y Alma", "CyC", "CyT Sensual", "JyE", "EyG", "DyY", "MARCO ESPEJO", "CYC", "JHERSY - Molino",
-  "JHERSY - Preparar pos Cerrada", "Sergio y Katina", "EyG", "Alberto y María (Cats)", "YyE", "JHERSY (preparo sensual + mano Follow)",
-  "JHERSY (preparo sensual + lanzo en 4 y salgo)", "DIAGONAL salida", "AyV", "CyC", "Sergio y Katina", "Sensual +", "Gto y M",
-  "José y Layla (Mym)", "INTRO", "K_ELDE", "TONIO (brazos, cuello+Disoc, Salir)", "JLAB (salir/end)", "Iván y Sarai", "TONIO (cambio posición mano hombro)"
+  "CyC (Host cambio posición)", "Daniel y Alma", "CyC (Host círculo Dcha)", "CyT Sensual", "JyE (diagonal Cintura)", "EyG (abro  y cierro)", "DyY (abro en 4)", "MARCO ESPEJO", "CYC (lanzo atrás en 3)", "JHERSY - Molino",
+  "JHERSY - Preparar pos Cerrada", "Sergio y Katina (Bassmnt)", "EyG (Cats giro 2 manos)", "Alberto y María (Cats)", "YyE", "JHERSY (preparo sensual + mano Follow)",
+  "JHERSY (preparo sensual + lanzo en 4 y salgo)", "DIAGONAL salida", "AyV", "CyC (Segovia)", "Sergio y Katina" (Host), "Sensual +", "Gto y M",
+  "José y Layla (Mymo)", "INTRO Carlos", "INTRO Carlos","INTRO Carlos", "K_ELDE Intro", "K_ELDE mano en 5",  "TONIO (brazos, cuello+Disoc, Salir)", "JLAB (salir/end)", "Iván y Sarai", "TONIO (cambio posición mano hombro)"
 ];
 
 // Pasos seleccionados para la partida (solo 10)
