@@ -31,7 +31,7 @@ const stepButtonsContainer = document.getElementById("step-buttons");
 function selectSteps() {
   steps = [];
   const poolCopy = [...stepsPool];
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 5; i++) { // Cambiado a 5
     const randomIndex = Math.floor(Math.random() * poolCopy.length);
     steps.push(poolCopy.splice(randomIndex, 1)[0]);
   }
@@ -57,9 +57,18 @@ function handleStepClick(step) {
   }
 }
 
-// Función para generar un paso aleatorio
+// Función para generar un paso aleatorio (sin repeticiones)
 function generateStep() {
-  return steps[Math.floor(Math.random() * steps.length)];
+  if (sequence.length === steps.length) {
+    endGame(); // Si todos los pasos ya fueron usados, termina el juego
+    return null;
+  }
+
+  let step;
+  do {
+    step = steps[Math.floor(Math.random() * steps.length)];
+  } while (sequence.includes(step)); // Asegura que no se repitan
+  return step;
 }
 
 // Función para mostrar la secuencia del juego
@@ -82,10 +91,12 @@ function startGame() {
 // Función para agregar un paso a la secuencia
 function addStep() {
   const newStep = generateStep();
-  sequence.push(newStep);
-  displaySequence();
-  playerSequence = []; // Limpia la secuencia del jugador
-  playerTurn = true; // Activa el turno del jugador
+  if (newStep) {
+    sequence.push(newStep);
+    displaySequence();
+    playerSequence = []; // Limpia la secuencia del jugador
+    playerTurn = true; // Activa el turno del jugador
+  }
 }
 
 // Función para verificar la secuencia del jugador
@@ -99,6 +110,13 @@ function checkPlayerSequence() {
     playerTurn = false;
     confirmButton.disabled = true; // Desactiva el botón confirmar
   }
+}
+
+// Función para terminar el juego
+function endGame() {
+  resultElement.textContent = "¡Juego terminado! Has completado todos los pasos.";
+  playerTurn = false;
+  confirmButton.disabled = true; // Desactiva el botón confirmar
 }
 
 // Event listeners
