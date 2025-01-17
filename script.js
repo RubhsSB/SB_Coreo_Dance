@@ -8,7 +8,7 @@ const stepsPool = [
   "Iván y Sarai", "TONIO (cambio posición mano hombro)", "JHERSY (salir/end)", "CyC", "Tonio (Codos / Angel / Andar)", "70'", "Yowke", "Pasitos Elw Adelante/Atrás", "Pasitos Elw Izq/Dcha", "Cambio posición con mano Izq (Marc/Sra)", "Daniel y Alma", 
   "Francia", "Alex y Lais (jóvenes -3+1)", "VyA", "DyY", "JyE", "CyC", "70'", "CyC", "M y Gta", "DyY", "DyY", "ENGAÑO", "PyL", "Yowke", "DyY", "ENGAÑO", "MOLINO juego", "TONIO (enrrollo + saco/peinado)", "SENSUAL Lados", "PATADA", "MATI y SOFI", 
   "MOLINO insta", "EyG", "TyC", "CyC", "GOLPE Elw", "JyE", "INTRO", "EyG", "VALENT", "VyA", "FLECHA", "CyC", "CyC", "CyC", "GERO y MIGLE (cambio pos 360º)", "Cuello (en 6)", "CyT", "EyG", "BRAZOS frame", "JOVENES 70'+ Cuello", "5 cintura abajo", 
-  "David", "CyT sens", "CyT sens", "DISOCIACION de PECHO (Enrollada)", "EyG", "CyC", "GAB", "CyC", "CyT", "KENZ y JULY Lanzo brazo atrás", "JyE", "Básico + Salto", "CyC", "EyG", "Pablo y Nat (jóvenes)" , "Otto", "CyC", "ASCENSOR", "JLAB", 
+  "David", "CyT sens", "CyT sens", "DISOCIACION de PECHO (Enrollada)", "EyG", "CyC", "GAB", "CyC", "CyT", "KENZ y JULY Lanzo brazo atrás", "JyE", "Básico + Salto", "CyC", "EyG", "Pablo y Nat (jóvenes)", "Otto", "CyC", "ASCENSOR", "JLAB", 
   "JAVI y BELÉN", "JORGE y SANDRA", "JyE", "COLOMBIAN", "DISOCIACION de PECHO (en SOMBRA)" , "CyC", "GIRO 70 Cambio Posición CyT", "GIRO ATRÁS ONDA CyC", "CyC", "CyC", "JLAB", "CyC", "YEIFREN", "CyC", "DyY", "SENSUAL +", "DyY", "70´Adelante", 
   "JyE", "A y Yur", "Lado MAMBO", "GAB", "JyE Giro CUELLO", "DISOCIACION de PECHO (pos CERRADA)", "D e Inés", "INTRO", "CyT", "Brazo Lanzo DEBAJO", "JLAB", "DOTORE (Mym)", "ARGETIN", "CANGURO", "PyL Pasos", "ENGAÑO", "CyC", "JyE", "GUITARRA", 
   "SINCOPADO", "Pasos CARLOS"
