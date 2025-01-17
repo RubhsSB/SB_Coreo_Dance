@@ -14,7 +14,7 @@ const stepsPool = [
   "SINCOPADO", "Pasos CARLOS"
 ];
 
-// Pasos seleccionados para la partida (solo 10)
+// Pasos seleccionados para la partida (solo 5)
 let steps = [];
 let sequence = []; // Secuencia generada por el juego
 let playerSequence = []; // Secuencia ingresada por el jugador
@@ -27,11 +27,11 @@ const sequenceElement = document.getElementById("sequence");
 const resultElement = document.getElementById("result");
 const stepButtonsContainer = document.getElementById("step-buttons");
 
-// Selecciona aleatoriamente 10 pasos de la pool
+// Selecciona aleatoriamente 5 pasos de la pool
 function selectSteps() {
   steps = [];
   const poolCopy = [...stepsPool];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 5; i++) {
     const randomIndex = Math.floor(Math.random() * poolCopy.length);
     steps.push(poolCopy.splice(randomIndex, 1)[0]);
   }
@@ -69,7 +69,7 @@ function displaySequence() {
 
 // Función para iniciar el juego
 function startGame() {
-  selectSteps(); // Selecciona los 10 pasos para esta partida
+  selectSteps(); // Selecciona los 5 pasos para esta partida
   createStepButtons(); // Crea botones con los pasos seleccionados
   sequence = [];
   playerSequence = [];
